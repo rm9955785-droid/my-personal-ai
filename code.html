@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackbox AI - Advanced AI Development Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background-color: #282c34;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .animated-underline {
+            position: relative;
+        }
+        
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--highlight);
+            transition: width 0.3s ease;
+        }
+        
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(233, 69, 96, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(233, 69, 96, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(233, 69, 96, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40" alt="Blackbox AI logo - abstract geometric design with gradient blue and purple colors" class="rounded-full" />
+                <span class="text-xl font-bold">Blackbox AI</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-gray-300 transition animated-underline">Features</a>
+                <a href="#how-it-works" class="hover:text-gray-300 transition animated-underline">How It Works</a>
+                <a href="#use-cases" class="hover:text-gray-300 transition animated-underline">Use Cases</a>
+                <a href="#pricing" class="hover:text-gray-300 transition animated-underline">Pricing</a>
+                <a href="#contact" class="hover:text-gray-300 transition animated-underline">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 rounded-full bg-white text-gray-800 font-medium hover:bg-gray-200 transition">
+                    Sign In
+                </button>
+                <button class="px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white font-medium hover:opacity-90 transition pulse-animation">
+                    Get Started
+                </button>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    The Future of AI Development <span class="text-red-400">Starts Here</span>
+                </h1>
+                <p class="text-xl mb-8 text-gray-300">
+                    Blackbox AI provides cutting-edge tools and infrastructure to build, train, and deploy AI models at scale. Accelerate your AI development with our powerful platform.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold hover:opacity-90 transition">
+                        Start Free Trial
+                    </button>
+                    <button class="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-gray-800 transition">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/800x600" alt="Futuristic AI interface dashboard showing neural network visualizations and data streams" class="rounded-xl shadow-2xl" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Blackbox AI provides everything you need to build state-of-the-art AI applications
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Advanced Model Training</h3>
+                    <p class="text-gray-600 mb-4">
+                        Train complex models with our optimized infrastructure that scales automatically with your needs.
+                    </p>
+                    <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-project-diagram text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Visual Pipeline Builder</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create complex AI workflows with our drag-and-drop interface without writing code.
+                    </p>
+                    <a href="#" class="text-purple-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-time Analytics</h3>
+                    <p class="text-gray-600 mb-4">
+                        Monitor model performance and data quality with comprehensive dashboards.
+                    </p>
+                    <a href="#" class="text-green-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
+                    <p class="text-gray-600 mb-4">
+                        Military-grade encryption and compliance with industry security standards.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-exchange-alt text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Seamless Integration</h3>
+                    <p class="text-gray-600 mb-4">
+                        Connect with your existing tools and workflows through our extensive API.
+                    </p>
+                    <a href="#" class="text-yellow-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 p-8 rounded-xl feature-card transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Collaboration Tools</h3>
+                    <p class="text-gray-600 mb-4">
+                        Work together with your team in real-time with shared projects and version control.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How Blackbox AI Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get from idea to production in just a few simple steps
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-blue-600 font-bold text-xl">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Connect Your Data</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Easily import your datasets from various sources including cloud storage, databases, or upload directly to our platform.
+                        </p>
+                        <div class="code-block p-4 text-gray-200 text-sm overflow-x-auto">
+                            <pre><code>from blackbox import Dataset
+dataset = Dataset.connect("postgresql://user:pass@host/db")
+dataset.load_table("customer_data")</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <img src="https://placehold.co/600x400" alt="Data visualization showing multiple data sources being connected to a central hub" class="rounded-xl shadow-lg" />
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 order-2 md:order-1 md:pr-12">
+                    <img src="https://placehold.co/600x400" alt="Neural network visualization with nodes and connections highlighted in different colors" class="rounded-xl shadow-lg" />
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-purple-600 font-bold text-xl">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Build Your Model</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Use our intuitive interface or code directly with our Python SDK to create and train your AI models.
+                        </p>
+                        <div class="code-block p-4 text-gray-200 text-sm overflow-x-auto">
+                            <pre><code>from blackbox import Model
+model = Model.create("xgboost")
+model.train(dataset, target="churn")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-green-600 font-bold text-xl">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Deploy & Monitor</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Deploy your model with one click and monitor its performance in real-time with our comprehensive analytics.
+                        </p>
+                        <div class="code-block p-4 text-gray-200 text-sm overflow-x-auto">
+                            <pre><code>deployment = model.deploy(
+    name="customer_churn_predictor",
+    scale=10,
+    region="us-east-1"
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <img src="https://placehold.co/600x400" alt="Dashboard showing real-time metrics and performance indicators for deployed AI models" class="rounded-xl shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Use Cases</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Blackbox AI powers innovative solutions across industries
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shopping-cart text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">E-commerce</h3>
+                    <p class="text-gray-600 text-sm">
+                        Personalized recommendations, demand forecasting, and fraud detection.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heartbeat text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Healthcare</h3>
+                    <p class="text-gray-600 text-sm">
+                        Medical imaging analysis, drug discovery, and patient risk prediction.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-money-bill-wave text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Finance</h3>
+                    <p class="text-gray-600 text-sm">
+                        Algorithmic trading, credit scoring, and anti-money laundering.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Manufacturing</h3>
+                    <p class="text-gray-600 text-sm">
+                        Predictive maintenance, quality control, and supply chain optimization.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold hover:opacity-90 transition">
+                    Explore All Use Cases
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by Leading Companies</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join thousands of organizations transforming their business with AI
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="flex items-center justify-center">
+                    <img src="https://placehold.co/160x80" alt="TechCorp company logo - modern tech company branding" class="h-12 opacity-70 hover:opacity-100 transition" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://placehold.co/160x80" alt="GlobalBank financial services logo - professional blue and white design" class="h-12 opacity-70 hover:opacity-100 transition" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://placehold.co/160x80" alt="HealthPlus medical company logo - green cross symbol with clean typography" class="h-12 opacity-70 hover:opacity-100 transition" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://placehold.co/160x80" alt="RetailNow e-commerce platform logo - orange and white shopping cart icon" class="h-12 opacity-70 hover:opacity-100 transition" />
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/48x48" alt="Sarah Johnson - Head of AI at TechCorp, professional headshot" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Head of AI, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Blackbox AI has reduced our model development time by 60%. The platform's scalability allowed us to train larger models without infrastructure headaches."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/48x48" alt="Michael Chen - CTO at RetailNow, smiling professional portrait" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">CTO, RetailNow</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The visual pipeline builder enabled our non-technical team members to contribute to AI projects. We've seen a 35% increase in conversion from recommendations."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/48x48" alt="Dr. Emma Rodriguez - Director of Research at HealthPlus, professional portrait" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dr. Emma Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Director of Research, HealthPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Blackbox's medical imaging tools helped us achieve 98% accuracy in early tumor detection. The platform's compliance features were crucial for healthcare applications."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the plan that fits your needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Starter</h3>
+                    <p class="text-gray-600 mb-6">Perfect for individuals and small teams</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$99</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Up to 10 models</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>50 GB storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Basic support</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full bg-gray-200 text-gray-800 font-bold hover:bg-gray-300 transition">
+                        Get Started
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-b from-blue-500 to-blue-600 p-8 rounded-xl text-white relative">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-blue-800 font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg text-sm">
+                        Most Popular
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Professional</h3>
+                    <p class="text-blue-100 mb-6">For growing teams and businesses</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$499</span>
+                        <span class="text-blue-200">/month</span>
+                    </div>
+                    <ul class="mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-white mr-2"></i>
+                            <span>Up to 50 models</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-white mr-2"></i>
+                            <span>250 GB storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-white mr-2"></i>
+                            <span>Standard support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-white mr-2"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center text-blue-200">
+                            <i class="fas fa-times text-blue-200 mr-2"></i>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full bg-white text-blue-600 font-bold hover:bg-blue-100 transition">
+                        Get Started
+                    </button>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+                    <p class="text-gray-600 mb-6">For large organizations with custom needs</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">Custom</span>
+                    </div>
+                    <ul class="mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Unlimited models</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>1 TB+ storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>24/7 support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full bg-gray-800 text-white font-bold hover:bg-gray-700 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">
+                    Need something different? <a href="#" class="text-blue-600 font-medium">Contact us</a> for custom solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business with AI?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Join thousands of companies leveraging Blackbox AI to build the future
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="px-8 py-4 rounded-full bg-white text-gray-800 font-bold hover:bg-gray-200 transition">
+                    Start Free Trial
+                </button>
+                <button class="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:text-gray-800 transition">
+                    Schedule Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8">
+                        Have questions about Blackbox AI? Our team is here to help you get started and answer any questions you might have.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-600">support@blackboxai.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Office</h4>
+                                <p class="text-gray-600">123 AI Boulevard, San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded
